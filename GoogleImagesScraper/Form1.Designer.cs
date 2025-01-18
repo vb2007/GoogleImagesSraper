@@ -2,15 +2,12 @@
 {
     partial class Form1
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.TextBox textBoxQuery;
+        private System.Windows.Forms.NumericUpDown numericUpDownCount;
+        private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.ProgressBar progressBar;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -30,6 +27,8 @@
         {
             textBox1 = new TextBox();
             numericUpDown1 = new NumericUpDown();
+            button1 = new Button();
+            scrapingProgress = new ProgressBar();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
@@ -49,11 +48,29 @@
             numericUpDown1.TabIndex = 1;
             numericUpDown1.Value = new decimal(new int[] { 10, 0, 0, 0 });
             // 
+            // button1
+            // 
+            button1.Location = new Point(323, 336);
+            button1.Name = "button1";
+            button1.Size = new Size(120, 23);
+            button1.TabIndex = 2;
+            button1.Text = "Start Scraper";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // scrapingProgress
+            // 
+            scrapingProgress.Location = new Point(323, 258);
+            scrapingProgress.Name = "scrapingProgress";
+            scrapingProgress.Size = new Size(120, 23);
+            scrapingProgress.TabIndex = 3;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(scrapingProgress);
+            Controls.Add(button1);
             Controls.Add(numericUpDown1);
             Controls.Add(textBox1);
             Name = "Form1";
@@ -67,5 +84,7 @@
 
         private TextBox textBox1;
         private NumericUpDown numericUpDown1;
+        private Button button1;
+        private ProgressBar scrapingProgress;
     }
 }
