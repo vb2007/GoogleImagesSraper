@@ -61,14 +61,6 @@ namespace GoogleImageScraper
                 }
             }
 
-            //for (int i = 0; i < amount; i++)
-            //{
-            //    // Simulate image download
-            //    await Task.Delay(1000);
-            //    progressBar.Value++;
-            //    Console.WriteLine($"Scraping image {i + 1} of {amount}");
-            //}
-
             MessageBox.Show("Scraping completed!");
         }
 
