@@ -1,5 +1,6 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 
 namespace GoogleImageScraper
 {
@@ -33,6 +34,7 @@ namespace GoogleImageScraper
             //options.AddArgument("--headless");
             options.AddArgument("--disable-gpu");
             options.AddArgument("--no-sandbox");
+            options.AddArgument("--window-size=1920,1080");
 
             using ChromeDriver driver = new ChromeDriver(options);
             driver.Navigate().GoToUrl($"https://www.google.com/search?q={query}&tbm=isch");
@@ -40,6 +42,7 @@ namespace GoogleImageScraper
             //ignores cookie consent popup, continues if it's not present
             try
             {
+                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
                 var rejectButton = driver.FindElement(By.XPath("//button[contains(., 'elutasítása')]"));
                 rejectButton.Click();
                 await Task.Delay(2000);
@@ -50,10 +53,11 @@ namespace GoogleImageScraper
             }
 
             //scrolls for more images
-            //for (int i = 0; i < 5; i++)
+            //int scrollAttempts = Math.Min(amount / 20 + 1, 10); // Adjust scrolling based on amount needed
+            //for (int i = 0; i < scrollAttempts; i++)
             //{
-            //    ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollBy(0, document.body.scrollHeight)");
-            //    await Task.Delay(2000);
+            //    ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollTo(0, document.body.scrollHeight)");
+            //    await Task.Delay(1000);  // Wait for images to load
             //}
 
             var imageElements = driver.FindElements(By.CssSelector("a[href*='/imgres']"));
