@@ -66,10 +66,10 @@ namespace GoogleImageScraper
             int count = 0;
             foreach (var element in imageElements)
             {
-                if (count > amount)
+                if (count >= amount)
                     break;
 
-                string href = element.GetAttribute("href");
+                string href = element.GetDomAttribute("href");
                 if (!string.IsNullOrEmpty(href))
                 {
                     string imageUrl = ExtractImageUrl(href);
