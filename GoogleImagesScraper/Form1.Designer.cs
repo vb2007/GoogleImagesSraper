@@ -2,15 +2,12 @@
 {
     partial class Form1
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.TextBox textBoxQuery;
+        private System.Windows.Forms.NumericUpDown numericUpDownCount;
+        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.ProgressBar progressBar;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,52 +17,63 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            numericUpDown1 = new NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            textBoxQuery = new TextBox();
+            numericUpDownCount = new NumericUpDown();
+            btnStart = new Button();
+            progressBar = new ProgressBar();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownCount).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // textBoxQuery
             // 
-            textBox1.Location = new Point(323, 52);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(120, 23);
-            textBox1.TabIndex = 0;
-            textBox1.Text = "Keyword";
+            textBoxQuery.Location = new Point(209, 12);
+            textBoxQuery.Name = "textBoxQuery";
+            textBoxQuery.PlaceholderText = "Enter search query";
+            textBoxQuery.Size = new Size(369, 23);
+            textBoxQuery.TabIndex = 0;
             // 
-            // numericUpDown1
+            // numericUpDownCount
             // 
-            numericUpDown1.Location = new Point(323, 145);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
-            numericUpDown1.TabIndex = 1;
-            numericUpDown1.Value = new decimal(new int[] { 10, 0, 0, 0 });
+            numericUpDownCount.Location = new Point(331, 57);
+            numericUpDownCount.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDownCount.Name = "numericUpDownCount";
+            numericUpDownCount.Size = new Size(120, 23);
+            numericUpDownCount.TabIndex = 1;
+            numericUpDownCount.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // btnStart
+            // 
+            btnStart.Location = new Point(349, 175);
+            btnStart.Name = "btnStart";
+            btnStart.Size = new Size(75, 23);
+            btnStart.TabIndex = 2;
+            btnStart.Text = "Start";
+            btnStart.UseVisualStyleBackColor = true;
+            btnStart.Click += btnStart_Click;
+            // 
+            // progressBar
+            // 
+            progressBar.Location = new Point(163, 99);
+            progressBar.Name = "progressBar";
+            progressBar.Size = new Size(468, 23);
+            progressBar.TabIndex = 3;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(numericUpDown1);
-            Controls.Add(textBox1);
+            Controls.Add(progressBar);
+            Controls.Add(btnStart);
+            Controls.Add(numericUpDownCount);
+            Controls.Add(textBoxQuery);
             Name = "Form1";
-            Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            Text = "Google Image Scraper";
+            ((System.ComponentModel.ISupportInitialize)numericUpDownCount).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
-
-        #endregion
-
-        private TextBox textBox1;
-        private NumericUpDown numericUpDown1;
     }
 }
